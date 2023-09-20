@@ -4,7 +4,14 @@ import Character from './Character'
 
 const urlPlanets = 'http://localhost:9009/api/planets'
 const urlPeople = 'http://localhost:9009/api/people'
-
+const theTester = {
+  id: 18,
+  name: 'Samuel',
+  homeworld: {
+name: 'Tatooine',
+id: 35
+  }
+}
 function App() {
   // ❗ Create state to hold the data from the API
 
@@ -31,28 +38,27 @@ function App() {
 const peopleArray = []
   planets.forEach(planet => {
     people.forEach(person => {
-      if (person.homeworld === planet.id){console.log(person.name, planet.name)}
-    })
-  })
-
-
-
-  people.forEach(person => {
-    peopleArray.push({
+      if (person.homeworld === planet.id){
+        peopleArray.push({
+          name: person.name,
       id: person.id,
-      name: person.name,
       homeworld: {
-        name: 'vas',
-        id: 'vas'
+        name: planet.name,
+        id: planet.id
       }
     })
-  }, [])
+        
+        
+        console.log(person.name, planet.name)
+      }
+    })
+  })
 console.log(peopleArray)
+
   return (
     <div>
       <h2>Star Wars Characters</h2>
-      <p>See the README of the project for instructions on completing this challenge</p>
-      {/* ❗ Map over the data in state, rendering a Character at each iteration */}
+      
     </div>
   )
 }
