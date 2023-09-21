@@ -40,11 +40,11 @@ const peopleArray = []
     people.forEach(person => {
       if (person.homeworld === planet.id){
         peopleArray.push({
+          id: person.id,
           name: person.name,
-      id: person.id,
       homeworld: {
-        name: planet.name,
-        id: planet.id
+        id: planet.id,
+        name: planet.name
       }
     })
       }
