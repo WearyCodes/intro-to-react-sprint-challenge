@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Character(props) {
   const { person } = props; // Each character object
 
-  const [homeworldOn, setHomeworldOn] = useState(false);
+  const [homeworldOn, setHomeworldOn] = useState(true);
 
   return (
     <div className='character-card' onClick={() => setHomeworldOn(!homeworldOn)}>
@@ -20,7 +20,7 @@ function Character(props) {
 
 function CharacterList(props) {
   const { peopleArray } = props;
-
+console.log(peopleArray)
   return (
     <div>
       {peopleArray.map((person, index) => (
