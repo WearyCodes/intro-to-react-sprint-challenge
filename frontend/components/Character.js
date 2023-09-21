@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function Character(props) {
   const { person } = props; // Each character object
 
-  const [homeworldOn, setHomeworldOn] = useState(true);
+  const [homeworldOn, setHomeworldOn] = useState(false);
 
   return (
     <div className='character-card' onClick={() => setHomeworldOn(!homeworldOn)}>
