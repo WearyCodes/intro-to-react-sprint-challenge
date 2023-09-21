@@ -36,8 +36,8 @@ function App() {
   // if (people){console.log(people)}
   // if (planets){console.log(planets)}
 const peopleArray = []
-  planets.forEach(planet => {
-    people.forEach(person => {
+  people.forEach(person => {
+    planets.forEach(planet => {
       if (person.homeworld === planet.id){
         peopleArray.push({
           id: person.id,
