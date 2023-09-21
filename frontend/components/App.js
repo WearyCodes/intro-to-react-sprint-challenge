@@ -33,8 +33,8 @@ function App() {
       .catch(err => console.log(err))
   }, [])
   
-  if (people){console.log(people)}
-  if (planets){console.log(planets)}
+  // if (people){console.log(people)}
+  // if (planets){console.log(planets)}
 const peopleArray = []
   planets.forEach(planet => {
     people.forEach(person => {
@@ -47,18 +47,17 @@ const peopleArray = []
         id: planet.id
       }
     })
-        
-        
-        console.log(person.name, planet.name)
       }
     })
   })
-console.log(peopleArray)
+// console.log(peopleArray)
+
+
 
   return (
     <div>
       <h2>Star Wars Characters</h2>
-      
+      <Character peopleArray={peopleArray}/>
     </div>
   )
 }

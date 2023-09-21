@@ -1,24 +1,32 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 
-function Character(name, homeworld) {
-  const [homeworldOn, setHomeworldOn] = useState(false)
-  const divvy = document.querySelector('div')
-  {divvy.addEventListener('click', () => {
-setHomeworldOn(!homeworldOn)
-  })}
-  // ❗ Add the props
-  // ❗ Create a state to hold whether the homeworld is rendering or not
-  // ❗ Create a "toggle" click handler to show or remove the homeworld
+function Character(props) {
+  const { person } = props; // Each character object
+
+  const [homeworldOn, setHomeworldOn] = useState(false);
+
   return (
-    <div className='character-card'>
-<h3 className='character-name'>{name}</h3>
-{homeworldOn ? (<p>
-    {"Planet: "}
-<span className='character-planet'>{homeworld.name}</span>
-</p>) : undefined}
-      {/* Use the same markup with the same attributes as in the mock */}
+    <div className='character-card' onClick={() => setHomeworldOn(!homeworldOn)}>
+      <h3 className='character-name'>{person.name}</h3>
+      {homeworldOn && (
+        <p>
+          {"Planet: "}
+          <span className='character-planet'>{person.homeworld.name}</span>
+        </p>
+      )}
     </div>
-  )
+  );
 }
 
-export default Character
+function CharacterList(props) {
+  const { peopleArray } = props;
+
+  return (
+    <div>
+      {peopleArray.map((person, index) => (
+        <Character key={index} person={person} />
+      ))}
+    </div>
+  );
+}
+export default CharacterList;
