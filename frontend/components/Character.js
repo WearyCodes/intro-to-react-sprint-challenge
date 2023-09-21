@@ -22,11 +22,11 @@ function CharacterList(props) {
   const { peopleArray } = props;
 console.log(peopleArray)
   return (
-    <div>
-      {peopleArray.map((person, index) => (
+
+      peopleArray.map((person, index) => (
         <Character key={index} person={person} />
-      ))}
-    </div>
+      ))
+
   );
 }
 export default CharacterList;
