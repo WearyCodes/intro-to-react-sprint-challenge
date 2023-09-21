@@ -58,7 +58,6 @@ const peopleArray = []
     <div>
       <h2>Star Wars Characters</h2>
       <Character peopleArray={peopleArray}/>
-      <span className='character-planet'>Alderaan</span>
     </div>
   )
 }
